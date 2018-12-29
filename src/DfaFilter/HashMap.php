@@ -28,6 +28,7 @@ class HashMap
      */
     public function put($key, $value)
     {
+		$key = strtolower($key);
         if (! array_key_exists($key, $this->hashTable)) {
             $this->hashTable[$key] = $value;
             return null;
@@ -45,6 +46,7 @@ class HashMap
      */
     public function get($key)
     {
+		$key = strtolower($key);
         if (array_key_exists($key, $this->hashTable)) {
             return $this->hashTable[$key];
         }
